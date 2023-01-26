@@ -6,7 +6,6 @@
 	"dependencies": [
 		"openmultiplayer/omp-stdlib",
 		"pawn-lang/samp-stdlib@open.mp",
-		"pawn-lang/pawn-stdlib@open.mp",
-		"IllidanS4/PawnPlus:v1.3.1"
+		"pawn-lang/pawn-stdlib@open.mp"
 	]
 }
