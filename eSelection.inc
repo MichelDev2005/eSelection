@@ -3,7 +3,7 @@
 #endif
 #define __eSelection_included
 
-#include <a_samp>
+#include <open.mp>
 #include <PawnPlus>
 
 #if !defined MAX_ITEM_PER_PAGE
@@ -11,6 +11,8 @@
 #endif
 
 #define MAX_MODEL_TEXT 64
+
+#pragma warning disable 234 //Temp
 
 #define MODEL_RESPONSE_CANCEL (0)
 #define MODEL_RESPONSE_SELECT (1)
@@ -41,6 +43,7 @@ static g_MenuPageCount[MAX_PLAYERS];
 static bool:g_MenuShown[MAX_PLAYERS];
 static g_MenuExtraID[MAX_PLAYERS];
 static g_MenuCooldownTick[MAX_PLAYERS];
+
 
 //enum for model data
 static enum _:g_eMenuModelData
@@ -310,16 +313,16 @@ public OnGameModeInit()
 {
 	//textdraw background
 	g_MenuBackground = TextDrawCreate(531.333374, 140.877777, "_");
-	TextDrawBackgroundColor(g_MenuBackground, 0);
+	TextDrawBackgroundColour(g_MenuBackground, 0);
 	TextDrawAlignment(g_MenuBackground, 1);
 	TextDrawFont(g_MenuBackground, 0);
 	TextDrawLetterSize(g_MenuBackground, 0.000000, 22.912965);
-	TextDrawColor(g_MenuBackground, 0);
+	TextDrawColour(g_MenuBackground, 0);
 	TextDrawSetOutline(g_MenuBackground, 0);
 	TextDrawSetProportional(g_MenuBackground, true);
 	TextDrawSetShadow(g_MenuBackground, 0);
 	TextDrawUseBox(g_MenuBackground, true);
-	TextDrawBoxColor(g_MenuBackground, 0x000000DD);
+	TextDrawBoxColour(g_MenuBackground, 0x000000DD);
 	TextDrawTextSize(g_MenuBackground, 121.333328, 0.000000);
 	TextDrawSetSelectable(g_MenuBackground, false);
 
@@ -328,7 +331,7 @@ public OnGameModeInit()
 	TextDrawLetterSize(g_MenuRightArrow, 0.000000, 0.000000);
 	TextDrawTextSize(g_MenuRightArrow, 5.999938, 7.051818);
 	TextDrawAlignment(g_MenuRightArrow, 1);
-	TextDrawColor(g_MenuRightArrow, -1);
+	TextDrawColour(g_MenuRightArrow, -1);
 	TextDrawSetShadow(g_MenuRightArrow, 0);
 	TextDrawSetOutline(g_MenuRightArrow, 0);
 	TextDrawFont(g_MenuRightArrow, 4);
@@ -339,7 +342,7 @@ public OnGameModeInit()
 	TextDrawLetterSize(g_MenuLeftArrow, 0.000000, 0.000000);
 	TextDrawTextSize(g_MenuLeftArrow, 5.999938, 7.051818);
 	TextDrawAlignment(g_MenuLeftArrow, 1);
-	TextDrawColor(g_MenuLeftArrow, -1);
+	TextDrawColour(g_MenuLeftArrow, -1);
 	TextDrawSetShadow(g_MenuLeftArrow, 0);
 	TextDrawSetOutline(g_MenuLeftArrow, 0);
 	TextDrawFont(g_MenuLeftArrow, 4);
@@ -350,9 +353,9 @@ public OnGameModeInit()
 	TextDrawLetterSize(g_MenuTopBanner, 0.000000, -0.447120);
 	TextDrawTextSize(g_MenuTopBanner, 121.333328, 0.000000);
 	TextDrawAlignment(g_MenuTopBanner, 1);
-	TextDrawColor(g_MenuTopBanner, 0);
+	TextDrawColour(g_MenuTopBanner, 0);
 	TextDrawUseBox(g_MenuTopBanner, true);
-	TextDrawBoxColor(g_MenuTopBanner, 0x808080FF);
+	TextDrawBoxColour(g_MenuTopBanner, 0x808080FF);
 	TextDrawSetShadow(g_MenuTopBanner, 0);
 	TextDrawSetOutline(g_MenuTopBanner, 0);
 	TextDrawFont(g_MenuTopBanner, 0);
@@ -362,9 +365,9 @@ public OnGameModeInit()
 	TextDrawLetterSize(g_MenuBottomBanner, 0.000000, -0.447120);
 	TextDrawTextSize(g_MenuBottomBanner, 120.666656, 0.000000);
 	TextDrawAlignment(g_MenuBottomBanner, 1);
-	TextDrawColor(g_MenuBottomBanner, 0);
+	TextDrawColour(g_MenuBottomBanner, 0);
 	TextDrawUseBox(g_MenuBottomBanner, true);
-	TextDrawBoxColor(g_MenuBottomBanner, 0x808080FF);
+	TextDrawBoxColour(g_MenuBottomBanner, 0x808080FF);
 	TextDrawSetShadow(g_MenuBottomBanner, 0);
 	TextDrawSetOutline(g_MenuBottomBanner, 0);
 	TextDrawFont(g_MenuBottomBanner, 0);
@@ -374,10 +377,10 @@ public OnGameModeInit()
 	TextDrawLetterSize(g_MenuCloseButton, 0.128333, 0.957036);
 	TextDrawTextSize(g_MenuCloseButton, 10.5021, 10.0187);
 	TextDrawAlignment(g_MenuCloseButton, 2);
-	TextDrawColor(g_MenuCloseButton, 0xC0C0C0FF);
+	TextDrawColour(g_MenuCloseButton, 0xC0C0C0FF);
 	TextDrawSetShadow(g_MenuCloseButton, 0);
 	TextDrawSetOutline(g_MenuCloseButton, 0);
-	TextDrawBackgroundColor(g_MenuCloseButton, 0x00000033);
+	TextDrawBackgroundColour(g_MenuCloseButton, 0x00000033);
 	TextDrawFont(g_MenuCloseButton, 2);
 	TextDrawSetProportional(g_MenuCloseButton, true);
 	TextDrawSetSelectable(g_MenuCloseButton, true);
