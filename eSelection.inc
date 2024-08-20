@@ -3,14 +3,7 @@
 #endif
 #define __eSelection_included
 
-#if !defined _INC_a_samp
-  #tryinclude <open.mp>
-#endif
-
-#if !defined _INC_open_mp
   #include <a_samp>
-#endif
-
 #include <PawnPlus>
 
 #if !defined MAX_ITEM_PER_PAGE
